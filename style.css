@@ -355,4 +355,8 @@
      flex-direction: column;
      gap: 10px;
    }
+  .nav-wrapper {
+   margin-left: 10%;
+   margin-right: var(--bar-margin);
+ }
  }
