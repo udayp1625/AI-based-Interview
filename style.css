@@ -26,9 +26,6 @@
  .nav-wrapper {
    margin-left: var(--bar-margin);
    margin-right: var(--bar-margin);
-   position: fixed;
-   top: 5%;
-   z-index: 1;
  }
 
  nav.main-nav {
@@ -385,8 +382,9 @@
    .nav-wrapper {
    margin-left: 4%;
    margin-right: 0%;
-   display: fixed;
+   position: fixed;
    top: 5%;
+   z-index: 1;
   
  }
    ul.links {
@@ -469,4 +467,5 @@
    }
   
  }
+
 
