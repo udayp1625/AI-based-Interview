@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interview Welcome</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="candidatefirstpage.css">
+</head>
+
+<body>
+
+<div class="page-bg">
+    <div class="welcome-wrapper">
+
+        <div class="company-panel">
+            <div class="company-logo">
+                <img src="logo.png">
+            </div>
+
+            <h2>AI-interview Inc.</h2>
+            <p class="invite-text">has invited you to take an AI Interview</p>
+
+            <div class="detail-card">
+                <span>⏱ Duration</span>
+                <div class="strong">
+                    <select name="duration">
+                        <option value="">Select duration</option>
+                        <option value="15">15 Minutes</option>
+                        <option value="30">30 Minutes</option>
+                        <option value="45">45 Minutes</option>
+                        <option value="60">60 Minutes</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="detail-card">
+                <span>💼 Position</span>
+                <div class="strong">
+                    <select name="position">
+                        <option value="">Select position</option>
+                        <option value="Full Stack Developer">Full Stack Developer</option>
+                        <option value="Frontend Developer">Frontend Developer</option>
+                        <option value="Mobile Application Developer">Mobile Application Developer</option>
+                        <option value="Data Analyst">Data Analytics</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-panel">
+
+            <!-- WELCOME -->
+            <div id="welcomeContent">
+                <h1>Welcome</h1>
+
+                <div class="info-box">
+                    <p>
+                        Welcome to AI-Interview! Your interview will be conducted by AI —
+                        relax, take your time, and answer confidently.
+                    </p>
+                    <p>
+                        We hope you enjoy the experience. For feedback, email us at
+                        <b>contact@AI-Interview</b>.
+                    </p>
+                </div>
+
+                <button class="primary-btn" onclick="validateStepOne()">CONTINUE</button>
+                <p class="error-msg" id="welcomeError"></p>
+                <div class="device-note">
+                    🖥 This AI interview works best on computers.
+                </div>
+            </div>
+
+            <!-- LANGUAGE -->
+            <div id="languageContent" class="hidden">
+                <h1>Choose language</h1>
+
+                <p class="desc">
+                    Please choose the language you would like the interview to be conducted in
+                </p>
+
+                <select class="select-box">
+                    <option value="">Select Language</option>
+                    <option>English (Available)</option>
+                    <option>Hindi</option>
+                    <option>Marathi</option>
+                </select>
+
+                <p class="hint">
+                    This will improve the AI’s ability to transcribe what you say more accurately
+                </p>
+
+                <button class="primary-btn" onclick="showConfirmScreen()">BEGIN</button>
+                <p class="error-msg" id="languageError"></p>
+                <div class="device-note">
+                    🖥 This AI interview works best on computers.
+                </div>
+            </div>
+
+            <!-- CONFIRM INFO -->
+            <div id="confirmContent" class="hidden">
+                <h1>Confirm Information</h1>
+
+                <p class="desc">Share your info to begin the interview.</p>
+
+                <input type="text" class="input-box" placeholder="First name">
+                <input type="text" class="input-box" placeholder="Last name">
+                <input type="email" class="input-box" placeholder="Email address">
+
+                <p class="policy">
+                    By continuing, you agree to our
+                    <span>Terms of Service</span> and
+                    <span>Privacy Policy</span>
+                </p>
+
+                <button class="primary-btn" onclick="showWarningScreen()">CONTINUE</button>
+                <p class="error-msg" id="confirmError"></p>
+
+            </div>
+
+            <!-- CHEATING WARNING -->
+            <div id="warningContent" class="hidden">
+                <h1>Cheating Warning</h1>
+
+                <p class="desc">
+                    We use advanced cheating detection systems to monitor interview activities.
+                </p>
+
+                <div class="info-box">
+                    <p>
+                        Any suspicious behaviour — constantly looking away from the camera,
+                        switching tabs, typing externally, etc. — will be flagged as potential
+                        cheating.
+                    </p>
+                    <p>
+                        Our AI also evaluates responses for AI-generated patterns.
+                    </p>
+                    <p>
+                        Please complete this interview independently and with integrity.
+                    </p>
+                </div>
+
+                <button class="primary-btn" onclick="startInterview()">CONTINUE</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="branding">Powered by <b>AI-Interview</b></div>
+</div>
+
+<script>
+function validateStepOne() {
+    document.getElementById("welcomeError").innerText = "";
+
+    const duration = document.querySelector('select[name="duration"]').value;
+    const position = document.querySelector('select[name="position"]').value;
+
+    if (!duration || !position) {
+        document.getElementById("welcomeError").innerText =
+            "Please select interview duration and position.";
+        return;
+    }
+
+    document.getElementById("welcomeContent").classList.add("hidden");
+    document.getElementById("languageContent").classList.remove("hidden");
+}
+
+function showConfirmScreen() {
+    document.getElementById("languageError").innerText = "";
+
+    const language = document.querySelector(".select-box").value;
+
+    if (!language) {
+        document.getElementById("languageError").innerText =
+            "Please choose a language to continue.";
+        return;
+    }
+
+    document.getElementById("languageContent").classList.add("hidden");
+    document.getElementById("confirmContent").classList.remove("hidden");
+}
+
+function showWarningScreen() {
+    document.getElementById("confirmError").innerText = "";
+
+    const inputs = document.querySelectorAll("#confirmContent input");
+    let valid = true;
+
+    inputs.forEach(input => {
+        if (input.value.trim() === "") valid = false;
+    });
+
+    if (!valid) {
+        document.getElementById("confirmError").innerText =
+            "Please fill in all personal details.";
+        return;
+    }
+
+    document.getElementById("confirmContent").classList.add("hidden");
+    document.getElementById("warningContent").classList.remove("hidden");
+}
+
+function startInterview() {
+    window.location.href = "permission.html";
+}
+</script>
+
+
+</body>
+</html>

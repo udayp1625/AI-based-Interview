@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+    /* General Settings */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f7f6;
+        margin: 0;
+        padding: 40px;
+    }
+
+    h2.section-title {
+        text-align: center;
+        font-size: 2.5rem;
+        color: #333;
+        margin-bottom: 50px;
+    }
+
+    /* Timeline Container */
+    .timeline {
+        position: relative;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    /* The Vertical Line */
+    .timeline::after {
+        content: '';
+        position: absolute;
+        width: 4px;
+        background-color: #e0e0e0; /* Fallback */
+        background: linear-gradient(to bottom, #4facfe 0%, #00f2fe 100%); /* Blue Gradient */
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -2px;
+        border-radius: 2px;
+    }
+
+    /* Container for each step */
+    .container {
+        padding: 10px 40px;
+        position: relative;
+        background-color: inherit;
+        width: 50%;
+        box-sizing: border-box;
+    }
+
+    /* Left and Right positions */
+    .left { left: 0; }
+    .right { left: 50%; }
+
+    /* The Circles (Numbers/Icons) */
+    .container::after {
+        content: attr(data-step); /* Uses the number defined in HTML */
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        right: -20px;
+        background-color: white;
+        border: 4px solid #4facfe; /* Match gradient color */
+        top: 20px;
+        border-radius: 50%;
+        z-index: 1;
+        text-align: center;
+        font-weight: bold;
+        line-height: 40px; /* Center text vertically */
+        color: #0056b3;
+        font-size: 1.2rem;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    /* Fix circle position for right side */
+    .right::after { left: -20px; }
+
+    /* The Content Box (The Card) */
+    .content {
+        padding: 20px 30px;
+        background-color: white;
+        position: relative;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* Soft Shadow */
+        transition: transform 0.3s ease; /* Animation on hover */
+        border-left: 5px solid #4facfe; /* Accent border */
+    }
+
+    /* Hover Effect */
+    .container:hover .content {
+        transform: translateY(-5px); /* Moves up slightly */
+        box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+    }
+
+    /* Typography */
+    .content h2 {
+        margin: 0 0 10px 0;
+        font-size: 1.3rem;
+        color: #2c3e50;
+    }
+
+    .content p {
+        margin: 0;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        color: #666;
+    }
+
+    /* Arrows pointing to the line */
+    .left::before {
+        content: " ";
+        height: 0;
+        position: absolute;
+        top: 30px;
+        width: 0;
+        z-index: 1;
+        right: 30px;
+        border: medium solid white;
+        border-width: 10px 0 10px 10px;
+        border-color: transparent transparent transparent white;
+    }
+
+    .right::before {
+        content: " ";
+        height: 0;
+        position: absolute;
+        top: 30px;
+        width: 0;
+        z-index: 1;
+        left: 30px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+    }
+
+    /* Mobile Responsiveness */
+    @media screen and (max-width: 600px) {
+        .timeline::after { left: 31px; }
+        .container { width: 100%; padding-left: 70px; padding-right: 25px; }
+        .container::after { left: 11px; }
+        .left::before, .right::before { left: 60px; border: medium solid white; border-width: 10px 10px 10px 0; border-color: transparent white transparent transparent; }
+        .right { left: 0%; }
+    }
+</style>
+</head>
+<body>
+
+<h2 class="section-title">How it Works</h2>
+
+<div class="timeline">
+  
+  <div class="container left" data-step="1">
+    <div class="content">
+      <h2>Candidate Login & Verification</h2>
+      <p>The candidate logs into the platform using their username and password. Once authenticated, the system prepares the interview environment.</p>
+    </div>
+  </div>
+
+  <div class="container right" data-step="2">
+    <div class="content">
+      <h2>Resume Upload & Setup</h2>
+      <p>The candidate uploads their CV. The platform requests camera/mic permissions and performs a system check.</p>
+    </div>
+  </div>
+
+  <div class="container left" data-step="3">
+    <div class="content">
+      <h2>AI-Powered Interview Session</h2>
+      <p>The AI interviewer presents questions. The candidate answers in real-time while the system records data for analysis.</p>
+    </div>
+  </div>
+
+  <div class="container right" data-step="4">
+    <div class="content">
+      <h2>Automated Report Generation</h2>
+      <p>The AI evaluates responses, behavior, and communication. A detailed report is generated for the HR team.</p>
+    </div>
+  </div>
+
+  <div class="container left" data-step="5">
+    <div class="content">
+      <h2>HR Review & Final Response</h2>
+      <p>HR reviews the AI-generated report over 2–3 days. Based on insights, the final decision is sent to the candidate.</p>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

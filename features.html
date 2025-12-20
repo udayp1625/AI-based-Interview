@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Features | AI Interview</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="features.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="nav-wrapper">
+  <nav class="main-nav">
+    <div class="brand">
+      <span class="logo">AI</span>
+      <span class="title">Interview</span>
+    </div>
+
+    <ul class="links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="features.html" class="active">Features</a></li>
+      <li><a href="missions.html">Our Mission</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+    </ul>
+
+    <a href="hrlogin.html" class="hr-btn">HR Login</a>
+
+    <button class="hamburger" id="hamburger">
+      <span class="burger-lines">
+        <span></span><span></span><span></span>
+      </span>
+    </button>
+  </nav>
+</div>
+
+<div class="mobile-panel" id="mobilePanel">
+  <div class="mobile-links">
+    <a href="index.html">Home</a>
+    <a href="features.html">Features</a>
+    <a href="missions.html">Our Mission</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="hrlogin.html" class="hr-btn">HR Login</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="features-hero">
+  <div class="container">
+    <h1>Designed for Fair & Efficient Interviews</h1>
+    <p>
+      A modern AI-powered interview system that helps recruiters evaluate candidates
+      objectively while giving candidates a comfortable interview experience.
+    </p>
+  </div>
+</section>
+
+<!-- FEATURE CARDS -->
+<section class="features-grid-section">
+  <div class="container features-grid">
+
+    <div class="feature-card">
+      <span class="icon">🤖</span>
+      <h3>AI-Led Interviews</h3>
+      <p>
+        The interview is conducted by an AI system, allowing candidates
+        to respond without real-time pressure.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <span class="icon">🎙</span>
+      <h3>Voice & Text Responses</h3>
+      <p>
+        Candidates can answer questions by speaking or typing,
+        based on their comfort level.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <span class="icon">📊</span>
+      <h3>Automated Reports</h3>
+      <p>
+        Responses are analyzed and summarized into structured
+        reports for HR review.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <span class="icon">🖥</span>
+      <h3>System Compatibility Check</h3>
+      <p>
+        Camera, microphone, and browser compatibility are verified
+        before the interview begins.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <span class="icon">🔒</span>
+      <h3>Secure Data Handling</h3>
+      <p>
+        Interview recordings and reports are stored securely
+        with restricted access.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <span class="icon">⏱</span>
+      <h3>Time Efficient Hiring</h3>
+      <p>
+        HR teams can evaluate multiple candidates without
+        scheduling live interviews.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- EXPLANATION -->
+<section class="details">
+        <div class="container">
+            <div class="detail-row">
+                <div class="detail-text">
+                    <span class="step-num">01</span>
+                    <h2>Behavioral AI Audit</h2>
+                    <p>Our AI identifies the STAR method (Situation, Task, Action, Result) within every answer. It ensures that candidates aren't just talking—they're proving their impact.</p>
+                    <ul class="check-list">
+                        <li>Automatic Competency Tagging</li>
+                        <li>Action-Oriented Language Detection</li>
+                        <li>Result-Impact Scoring</li>
+                    </ul>
+                </div>
+                <div class="detail-image glass-effect">
+                    <div class="inner-visual"></div>
+                </div>
+            </div>
+
+            <div class="detail-row reverse">
+                <div class="detail-text">
+                    <span class="step-num">02</span>
+                    <h2>Bias-Free Evaluation</h2>
+                    <p>By focusing purely on transcript data and performance metrics, our platform removes subconscious bias related to appearance, gender, or background.</p>
+                    <ul class="check-list">
+                        <li>Anonymized Evaluation Mode</li>
+                        <li>Fairness-First Algorithms</li>
+                        <li>Standardized Question Sets</li>
+                    </ul>
+                </div>
+                <div class="detail-image glass-effect">
+                    <div class="inner-visual pulse"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<footer class="footer">
+  <p>&copy; 2025 AI Interview Platform. All rights reserved.</p>
+</footer>
+
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const mobilePanel = document.getElementById("mobilePanel");
+
+  hamburger.addEventListener("click", () => {
+    mobilePanel.classList.toggle("open");
+  });
+</script>
+
+</body>
+</html>

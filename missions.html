@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Mission | AI Interview Pro</title>
+
+  <link rel="stylesheet" href="missions.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <div class="nav-wrapper">
+    <nav class="main-nav">
+      <div class="brand">
+        <span class="logo">AI</span>
+        <span class="title">Interview</span>
+      </div>
+
+      <ul class="links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="missions.html" class="active">Our Mission</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <a href="hrlogin.html" class="hr-btn">HR Login</a>
+
+      <button class="hamburger" id="hamburger">
+        <span class="burger-lines">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+    </nav>
+  </div>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-panel" id="mobilePanel">
+    <div class="mobile-links">
+      <a href="index.html">Home</a>
+      <a href="features.html">Features</a>
+      <a href="missions.html">Our Mission</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html">Contact</a>
+      <a href="hrlogin.html" class="hr-btn">HR Login</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="mission-hero">
+    <div class="container">
+      <h1>Democratizing the <span class="highlight">Future of Work</span></h1>
+      <p class="subtitle">
+        We’re building empathetic AI that removes bias, stress, and inefficiency from hiring.
+      </p>
+    </div>
+  </section>
+
+  <!-- OUR VISION -->
+  <section class="mission-content">
+    <div class="container grid">
+
+      <div class="text-block">
+        <h2>Our Vision</h2>
+        <p>
+          Traditional interviews are often biased, inconsistent, and stressful.
+          Great candidates are rejected for the wrong reasons.
+        </p>
+        <p>
+          We believe hiring should be fair, skill-focused, and accessible.
+          Our mission is to empower both candidates and recruiters with
+          intelligent, unbiased interview experiences.
+        </p>
+      </div>
+
+      <div class="image-placeholder">
+        <div class="abstract-shape"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- OUR PROJECT -->
+  <section class="project-info">
+    <div class="container">
+      <h2 class="center">About Our Project</h2>
+
+      <p class="project-text">
+        <b>AI Interview</b> is an intelligent interview platform designed to automate
+        technical and behavioral interviews using artificial intelligence.
+        The system conducts interviews via voice or text, evaluates responses in real time,
+        and generates structured reports for HR teams.
+      </p>
+
+      <p class="project-text">
+        Candidates interact with an AI interviewer in a calm, pressure-free environment,
+        while recruiters receive objective insights based on communication skills,
+        confidence, accuracy, and problem-solving ability.
+      </p>
+
+      <p class="project-text">
+        Our platform supports secure interview sessions, cheating detection,
+        analytics dashboards, and role-based access — making hiring faster,
+        fairer, and scalable.
+      </p>
+    </div>
+  </section>
+
+  <!-- CORE VALUES -->
+  <section class="values">
+    <div class="container">
+      <h2 class="center">Our Core Pillars</h2>
+
+      <div class="value-grid">
+        <div class="value-card">
+          <h3>Bias Elimination</h3>
+          <p>
+            Standardized AI-driven interviews ensure candidates are judged only on skills.
+          </p>
+        </div>
+
+        <div class="value-card">
+          <h3>Accessibility</h3>
+          <p>
+            Interviews can be taken remotely, anytime, anywhere — no human pressure.
+          </p>
+        </div>
+
+        <div class="value-card">
+          <h3>Empowerment</h3>
+          <p>
+            Candidates receive structured evaluation while recruiters gain actionable insights.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2024 AI Interview Platform. Building fair hiring with AI.</p>
+  </footer>
+
+  <!-- NAV SCRIPT -->
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const mobilePanel = document.getElementById("mobilePanel");
+
+    hamburger.addEventListener("click", () => {
+      mobilePanel.classList.toggle("open");
+    });
+  </script>
+
+</body>
+</html>
