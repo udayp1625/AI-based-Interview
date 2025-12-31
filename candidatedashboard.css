@@ -1,0 +1,170 @@
+    * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    }
+
+    body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f4f6f8;
+    color: #111;
+    }
+
+    .container {
+    max-width: 95%;
+    margin: 30px auto;
+    background: #fff;
+    padding: 30px;
+    }
+
+    /* Header */
+    .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+
+    .header h1 {
+    font-size: 26px;
+    }
+
+    .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    }
+
+    /* Buttons */
+    .btn {
+    padding: 10px 18px;
+    border-radius: 8px;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #fff;
+    }
+
+    .btn.mock {
+    background: linear-gradient(135deg, #1abc9c, #16a085);
+    }
+
+    .btn.start {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    }
+
+    .btn:hover {
+    opacity: 0.9;
+    }
+
+    /* Profile Icon */
+    .profile-icon {
+    font-size: 22px;
+    cursor: pointer;
+    }
+
+    /* Welcome Card */
+    .welcome-card{
+    margin: 30px 0;
+    height: 600px;
+    width: 100%;
+    background: white;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #333;
+    }
+    .welcome-card img{
+        width: 75%;
+        height: 550px;
+        border-radius: 50px;
+    }
+
+    /* Divider */
+    hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 30px 0;
+    }
+
+    /* History Section */
+    .history h2 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    }
+
+    /* Table Header */
+    .table-header {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr;
+    background: #f1f1f1;
+    padding: 12px;
+    font-weight: 600;
+    border-radius: 6px;
+    }
+
+    /* Table Row */
+    .table-row {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr;
+    padding: 14px 12px;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    }
+
+    /* View Report Button */
+    .view-btn {
+    background: linear-gradient(135deg, #1abc9c, #16a085);
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    }
+
+    .view-btn:hover {
+    opacity: 0.9;
+    }
+/* Profile Dropdown Container */
+.profile-container {
+  position: relative;
+}
+
+/* Profile Icon */
+.profile-container .profile-icon {
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Dropdown Menu */
+.profile-menu {
+  position: absolute;
+  top: 35px;
+  right: 0;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  display: none;
+  min-width: 140px;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+/* Dropdown Item */
+.profile-menu a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  text-decoration: none;
+  color: #111;
+  font-size: 14px;
+}
+
+/* Hover Effect */
+.profile-menu a:hover {
+  background: #f3f4f6;
+}
