@@ -5,56 +5,52 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>AI Interview</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+  <!-- NAVBAR -->
   <div class="nav-wrapper">
-    <nav class="main-nav" role="navigation" aria-label="Main navigation">
-      <div class="brand" aria-hidden="false">
+    <nav class="main-nav">
+      <div class="brand">
         <span class="logo">AI</span>
         <span class="title">Interview</span>
       </div>
 
-      <ul class="links" role="menubar" aria-label="Primary">
-        <li><a href="#how">How it works ?</a></li>
+      <ul class="links">
+        <li><a href="index.html" class="active">Home</a></li>
         <li><a href="features.html">Features</a></li>
         <li><a href="missions.html">Our Mission</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
 
-      <a href="login.html" class="hr-btn" id="hrTopBtn">Login</button></a>
+      <a href="login.html" class="hr-btn">Login</a>
 
-      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-controls="mobilePanel" aria-expanded="false">
-        <span class="burger-lines" aria-hidden="true"><span></span><span></span><span></span></span>
+      <button class="hamburger" id="hamburger">
+        <span class="burger-lines">
+          <span></span><span></span><span></span>
+        </span>
       </button>
     </nav>
   </div>
 
-  <div class="mobile-panel" id="mobilePanel" role="dialog" aria-modal="true" aria-hidden="true">
-    <div style="display:flex;align-items:center;justify-content:space-between">
-      <div style="display:flex;gap:8px;align-items:center"><span class="logo" style="font-size:18px">AI</span><span
-          style="font-weight:700">Interview</span></div>
-      <button id="closeMobile" aria-label="Close menu"
-        style="border:0;background:transparent;font-size:20px;cursor:pointer">✕</button>
+  <div class="mobile-panel" id="mobilePanel">
+    <div class="mobile-links">
+      <a href="index.html">Home</a>
+      <a href="features.html">Features</a>
+      <a href="missions.html">Our Mission</a>
+      <a href="contact.html">Contact us</a>
+      <a href="login.html" class="hr-btn">Login</a>
     </div>
-
-    <nav class="mobile-links" aria-label="Mobile primary">
-      <a>How it works ?</a>
-      <a>Pricing</a>
-      <a>Features</a>
-      <a>Our Missions</a>
-      <a>Contact us</a>
-
-      <div style="margin-top:6px"><button class="hr-btn" id="hrMobileBtn" style="width:100%">HR Login</button></div>
-    </nav>
   </div>
+
   <main class="hero" role="main">
     <div class="container hero-grid">
 
       <!-- LEFT: text + main login buttons -->
       <section class="hero-text">
-        <h1 class="hero-title"><span>AI &nbsp;</span>Interview— Private AI Interview System</h1>
+        <h1 class="hero-title"><span>AI-</span>Interview  Private AI Interview System</h1>
         <p class="hero-sub">
           Only scheduled candidates can join interviews. HR schedules interviews and receives AI-generated
           scores & feedback.
