@@ -18,13 +18,28 @@ html, body {
 
 body {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  background: linear-gradient(
-    to bottom,
-    #faf9f7 0%,
-    #faf9f7 40%,
-    #faf9f7 75%,
-    #faf9f7 100%
-  );
+  background:
+    radial-gradient(
+      900px 500px at 15% 20%,
+      rgba(255, 200, 150, 0.35),
+      transparent 60%
+    ),
+    radial-gradient(
+      800px 500px at 85% 30%,
+      rgba(200, 210, 255, 0.35),
+      transparent 60%
+    ),
+    radial-gradient(
+      700px 400px at 50% 80%,
+      rgba(255, 220, 200, 0.25),
+      transparent 60%
+    ),
+    linear-gradient(
+      180deg,
+      #fffaf7 0%,
+      #fff4ee 40%,
+      #f8f3ff 100%
+    );;
   padding-top: 10px;
 }
 
@@ -981,3 +996,4 @@ a{
      padding-bottom: 50%;
    }
  }
+
