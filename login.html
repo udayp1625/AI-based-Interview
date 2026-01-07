@@ -1,63 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>Login Portal</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="login.css">
 </head>
+
 <body>
 
-<div class="container">
-  <div class="login-card">
+  <div class="container">
+    <div class="login-card">
 
-    <!-- Toggle Buttons -->
-    <div class="toggle-buttons">
-      <button class="toggle-btn active" id="hrBtn">HR Login</button>
-      <button class="toggle-btn" id="candidateBtn">Candidate Login</button>
-    </div>
-
-    <!-- HR LOGIN FORM -->
-    <form id="hrForm" class="form active">
-      <h2>HR Portal</h2>
-      <p class="subtitle">Login to manage interviews</p>
-
-      <label>Email / HR ID</label>
-      <input type="text" placeholder="Enter HR email or ID" required>
-
-      <label>Password</label>
-      <input type="password" placeholder="Enter password" required>
-
-      <div class="remember">
-        <input type="checkbox"> Remember me
+      <!-- Toggle Buttons -->
+      <div class="toggle-buttons">
+        <button class="toggle-btn active" id="hrBtn">HR Login</button>
+        <button class="toggle-btn" id="candidateBtn">Candidate Login</button>
       </div>
 
-      <button type="submit" class="login-btn">Login</button>
-      <p class="note">Authorized HR personnel only</p>
-    </form>
+      <!-- HR LOGIN FORM -->
+      <form id="hrForm" class="form active">
+        <h2>HR Portal</h2>
+        <p class="subtitle">Login to manage interviews</p>
 
-    <!-- CANDIDATE LOGIN FORM -->
-    <form id="candidateForm" class="form">
-      <h2>Candidate Portal</h2>
-      <p class="subtitle">Login to start your interview</p>
+        <label>Email / HR ID</label>
+        <input type="text" placeholder="Enter HR email or ID" required>
 
-      <label>Email / Candidate ID</label>
-      <input type="text" placeholder="Enter email or ID" required>
+        <label>Password</label>
+        <input type="password" placeholder="Enter password" required>
 
-      <label>Password</label>
-      <input type="password" placeholder="Enter password" required>
+        <div class="remember">
+          <input type="checkbox"> Remember me
+        </div>
 
-      <button type="button" class="login-btn"
-        onclick="window.location.href='candidatedashboard.html'">
-  Login
-</button>
+        <button type="submit" class="login-btn" onclick="window.location.href='hr.html'">Login</button>
+        <p class="note">Authorized HR personnel only</p>
+      </form>
 
-      <p class="note">Ensure camera & mic access</p>
-    </form>
+      <!-- CANDIDATE LOGIN FORM -->
+      <form id="candidateForm" class="form">
+        <h2>Candidate Portal</h2>
+        <p class="subtitle">Login to start your interview</p>
 
+        <label>Email / Candidate ID</label>
+        <input type="text" placeholder="Enter email or ID" required>
+
+        <label>Password</label>
+        <input type="password" placeholder="Enter password" required>
+
+        <button type="button" class="login-btn" onclick="window.location.href='candidatedashboard.html'">
+          Login
+        </button>
+
+        <p class="note">Ensure camera & mic access</p>
+      </form>
+
+    </div>
   </div>
-</div>
 
-<script src="login.js"></script>
+  <script src="login.js"></script>
 </body>
+
 </html>
