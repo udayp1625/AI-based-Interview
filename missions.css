@@ -133,8 +133,6 @@ li:hover {
   gap: 14px;
 }
 
-/* ================= HERO ================= */
-
 .mission-hero {
   padding: 120px 0 90px;
  background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 50%, #daf3ee 100%);
@@ -142,7 +140,7 @@ li:hover {
 }
 
 .mission-hero h1 {
-  font-size: 3.2rem;
+  font-size: 2.5rem;
   color: var(--secondary);
   margin-bottom: 1rem;
 }
@@ -152,13 +150,11 @@ li:hover {
 }
 
 .subtitle {
-  font-size: 1.2rem;
+  font-size: 1.0rem;
   color: var(--text-light);
   max-width: 720px;
   margin: 0 auto;
 }
-
-/* ================= VISION ================= */
 
 .mission-content {
   padding: 100px 0;
@@ -172,7 +168,7 @@ li:hover {
 }
 
 .text-block h2 {
-  font-size: 2.2rem;
+  font-size: 2.0rem;
   margin-bottom: 1.5rem;
   color: var(--secondary);
 }
@@ -190,15 +186,13 @@ li:hover {
   opacity: 0.12;
 }
 
-/* ================= PROJECT INFO ================= */
-
 .project-info {
   padding: 100px 0;
 }
 
 .project-info h2 {
   text-align: center;
-  font-size: 2.3rem;
+  font-size: 2.2rem;
   margin-bottom: 30px;
   color: var(--secondary);
 }
@@ -210,8 +204,6 @@ li:hover {
   color: var(--text-main);
   line-height: 1.7;
 }
-
-/* ================= VALUES ================= */
 
 .values {
   background-color: var(--bg-light);
@@ -245,8 +237,6 @@ li:hover {
   color: var(--primary);
   margin-bottom: 1rem;
 }
-
-/* ================= FOOTER ================= */
 
 .footer-section {
   background-color: #111827;
@@ -354,7 +344,6 @@ li:hover {
   text-decoration: none;
 }
 
-/* Responsive footer */
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;
@@ -367,9 +356,6 @@ li:hover {
     gap: 15px;
   }
 }
-
-
-/* ================= RESPONSIVE ================= */
 
 @media (max-width: 900px) {
   nav.main-nav {
