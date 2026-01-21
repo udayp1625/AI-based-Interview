@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Apply for Interview</title>
+  <link rel="stylesheet" href="apply.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Interview Application Form</h2>
+
+    <form action="ApplyInterviewServlet" method="post" enctype="multipart/form-data">
+
+      <div class="row">
+        <input type="text" name="full_name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+      </div>
+
+      <div class="row">
+        <input type="text" name="mobile" placeholder="Mobile Number" required>
+        <input type="text" name="qualification" placeholder="Qualification" required>
+      </div>
+
+      <div class="row">
+        <input type="text" name="skills" placeholder="Skills (Java, SQL, HTML)" required>
+        <input type="text" name="experience" placeholder="Experience (Fresher / 1+ Years)" required>
+      </div>
+
+      <input type="text" name="position" placeholder="Position Applied For" required>
+
+      <div class="upload-box">
+        <label>Upload Photo</label>
+        <input type="file" name="photo" accept="image/*" required>
+      </div>
+
+      <div class="upload-box">
+        <label>Upload CV</label>
+        <input type="file" name="cv" accept=".pdf,.doc,.docx" required>
+      </div>
+
+      <button type="submit">Apply for Interview</button>
+
+    </form>
+  </div>
+
+</body>
+</html>

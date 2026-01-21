@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Mission | AI Interview Pro</title>
+
+  <link rel="stylesheet" href="missions.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="nav-wrapper">
+    <nav class="main-nav">
+      <div class="brand">
+        <span class="logo">AI</span>
+        <span class="title">Interview</span>
+      </div>
+
+      <ul class="links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="missions.html" class="active">Our Mission</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <a href="login.html" class="hr-btn">Login</a>
+
+      <button class="hamburger" id="hamburger">
+        <span class="burger-lines">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+    </nav>
+  </div>
+
+  <div class="mobile-panel" id="mobilePanel">
+    <div class="mobile-links">
+      <a href="index.html">Home</a>
+      <a href="features.html">Features</a>
+      <a href="missions.html">Our Mission</a>
+      <a href="contact.html">Contact us</a>
+      <a href="login.html" class="hr-btn">Login</a>
+    </div>
+  </div>
+
+  <section class="mission-hero">
+    <div class="container">
+      <h1>Democratizing the <span class="highlight">Future of Work</span></h1>
+      <p class="subtitle">
+        We’re building empathetic AI that removes bias, stress, and inefficiency from hiring.
+      </p>
+    </div>
+  </section>
+
+  <section class="mission-content">
+    <div class="container grid">
+
+      <div class="text-block">
+        <h2>Our Vision</h2>
+        <p>
+          Traditional interviews are often biased, inconsistent, and stressful.
+          Great candidates are rejected for the wrong reasons.
+        </p>
+        <p>
+          We believe hiring should be fair, skill-focused, and accessible.
+          Our mission is to empower both candidates and recruiters with
+          intelligent, unbiased interview experiences.
+        </p>
+      </div>
+
+      <div class="image-placeholder">
+        <div class="abstract-shape">
+          <img src="vision.png">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="project-info">
+    <div class="container">
+      <h2 class="center">About Our Project</h2>
+
+      <p class="project-text">
+        <b>AI Interview</b> is an intelligent interview platform designed to automate
+        technical and behavioral interviews using artificial intelligence.
+        The system conducts interviews via voice or text, evaluates responses in real time,
+        and generates structured reports for HR teams.
+      </p>
+
+      <p class="project-text">
+        Candidates interact with an AI interviewer in a calm, pressure-free environment,
+        while recruiters receive objective insights based on communication skills,
+        confidence, accuracy, and problem-solving ability.
+      </p>
+
+      <p class="project-text">
+        Our platform supports secure interview sessions, cheating detection,
+        analytics dashboards, and role-based access — making hiring faster,
+        fairer, and scalable.
+      </p>
+    </div>
+  </section>
+
+  <section class="values">
+    <div class="container">
+      <h2 class="center">Our Core Pillars</h2>
+
+      <div class="value-grid">
+        <div class="value-card">
+          <h3>Bias Elimination</h3>
+          <p>
+            Standardized AI-driven interviews ensure candidates are judged only on skills.
+          </p>
+        </div>
+
+        <div class="value-card">
+          <h3>Accessibility</h3>
+          <p>
+            Interviews can be taken remotely, anytime, anywhere — no human pressure.
+          </p>
+        </div>
+
+        <div class="value-card">
+          <h3>Empowerment</h3>
+          <p>
+            Candidates receive structured evaluation while recruiters gain actionable insights.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer-section">
+  <div class="footer-container">
+
+    <div class="footer-content">
+
+      <div class="footer-col brand-col">
+        <h3>AI Interviewer</h3>
+        <p>
+          Streamline your hiring process with our AI-powered interview platform.
+          Save time, reduce bias, and hire the best talent faster.
+        </p>
+
+        <div class="social-links">
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="missions.html">Our Missions</a></li>
+          <li><a href="contact.html">Contact us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li>
+            <a href="www.linkedin.com/in/uday-patil2337">
+              <i class="fa-brands fa-linkedin"></i> Linkedin
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa-brands fa-twitter"></i> Twitter
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa-brands fa-instagram"></i> Instagram
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 AI Interviewer Platform. All rights reserved.</p>
+    </div>
+
+  </div>
+</footer>
+
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+/>
+
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const mobilePanel = document.getElementById("mobilePanel");
+
+    hamburger.addEventListener("click", () => {
+      mobilePanel.classList.toggle("open");
+    });
+  </script>
+
+</body>
+</html>

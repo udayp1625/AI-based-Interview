@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>HR Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="hr_candidate.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+  <div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="brand">AI Interview</div>
+
+      <nav class="menu">
+        <a href="hr"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
+        <a href="createinterview"><i class="fa-solid fa-calendar-plus"></i> Create Interview</a>
+        <a href="hr_candidate" class="active"><i class="fa-solid fa-users"></i> Candidates</a>
+        <a href="sendresult"><i class="fa-solid fa-paper-plane"></i> Send Result</a>
+      </nav>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+
+      <header class="topbar">
+        <h1>Candidates</h1>
+        <button class="logout" onclick="window.location.href='index.html'">Logout</button>
+      </header>
+
+      <section class="candidates-card">
+
+        <div class="candidates-header">
+          <input type="text" placeholder="Search candidate..." class="search-input">
+          <select class="filter-select">
+            <option value="">All Status</option>
+            <option>Interviewed</option>
+            <option>Pending</option>
+            <option>Selected</option>
+            <option>Rejected</option>
+          </select>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="candidates-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Resume</th>
+              </tr>
+            </thead>
+			<tbody id="candidatesBody">
+  
+			</tbody>
+          </table>
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+<script>
+fetch("candidates")
+  .then(response => response.json())
+  .then(data => {
+    const tbody = document.getElementById("candidatesBody");
+    tbody.innerHTML = "";
+
+    data.forEach(c => {
+
+      let statusClass = "pending";
+      if (c.status === "APPROVED") statusClass = "selected";
+      if (c.status === "REJECTED") statusClass = "rejected";
+
+      const row = `
+        <tr>
+          <td>${c.name}</td>
+          <td>${c.email}</td>
+          <td>${c.position}</td>
+          <td>${c.date}</td>
+          <td><span class="status ${statusClass}">${c.status}</span></td>
+          <td>
+          <button class="view-btn" onclick="viewCV(${c.id})">
+          View
+        </button>
+
+          </td>
+        </tr>
+      `;
+
+      tbody.innerHTML += row;
+    });
+  });
+function viewCV(applicationId) {
+	  window.open("view-cv?id=" + applicationId, "_blank");
+	}
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>HR Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="hr.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<div class="layout">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="brand">AI Interview</div>
+    <nav class="menu">
+      <a class="active"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
+      <a href="createinterview"><i class="fa-solid fa-calendar-plus"></i> Create Interview</a>
+      <a href="hr_candidate"><i class="fa-solid fa-users"></i> Candidates</a>
+      <a href="sendresult"><i class="fa-solid fa-paper-plane"></i> Send Result</a>
+    </nav>
+  </aside>
+
+  <!-- Main -->
+  <div class="main-content">
+
+    <header class="topbar">
+      <h1>Welcome back, HR 👋</h1>
+      <button class="logout" onclick="window.location.href='logout'">Logout</button>
+    </header>
+
+    <!-- METRICS -->
+    <div class="metrics">
+      <div class="metric-card">
+        <p>Total Scheduled Interviews</p>
+        <h3 id="totalInterviews">0</h3>
+      </div>
+
+      <div class="metric-card">
+        <p>Attendance Rate</p>
+        <h3 id="attendanceRate">0%</h3>
+      </div>
+
+      <div class="metric-card">
+        <p>Total Employees</p>
+        <h3 id="totalEmployees">0</h3>
+      </div>
+    </div>
+
+    <!-- CHARTS -->
+    <div class="charts">
+
+      <div class="chart-card large">
+        <h4>Interview Statistics</h4>
+        <p class="sub">Monthly overview</p>
+        <div class="chart-placeholder">Line / Area Chart Here</div>
+      </div>
+
+      <div class="chart-card">
+        <h4>Performance</h4>
+
+        <div class="progress">
+          <span>Frontend</span>
+          <div class="bar"><div id="frontendBar"></div></div>
+        </div>
+
+        <div class="progress">
+          <span>Backend</span>
+          <div class="bar"><div id="backendBar"></div></div>
+        </div>
+
+        <div class="progress">
+          <span>Full Stack</span>
+          <div class="bar"><div id="fullstackBar"></div></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- LATEST INTERVIEWS -->
+    <div class="table-card">
+      <h4>Latest Interviews</h4>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Candidate</th>
+            <th>Role</th>
+            <th>Status</th>
+            <th>Date</th>
+            <th>Report</th>
+          </tr>
+        </thead>
+        <tbody id="latestTable">
+          <!-- Data loaded from servlet -->
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+/* DASHBOARD STATS */
+fetch("hr-dashboard-stats")
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById("totalInterviews").innerText = data.totalInterviews;
+    document.getElementById("attendanceRate").innerText = data.attendanceRate + "%";
+    document.getElementById("totalEmployees").innerText = data.totalEmployees;
+  });
+
+/* PERFORMANCE BARS */
+fetch("/performance-data")
+  .then(res => res.json())
+  .then(data => {
+    const total =
+      (data["Frontend Developer"] || 0) +
+      (data["Backend Developer"] || 0) +
+      (data["Full Stack Developer"] || 0);
+
+    if (total === 0) return;
+
+    document.getElementById("frontendBar").style.width =
+      ((data["Frontend Developer"] || 0) / total * 100) + "%";
+
+    document.getElementById("backendBar").style.width =
+      ((data["Backend Developer"] || 0) / total * 100) + "%";
+
+    document.getElementById("fullstackBar").style.width =
+      ((data["Full Stack Developer"] || 0) / total * 100) + "%";
+  });
+
+/* LATEST INTERVIEWS */
+fetch("latest-candidates")
+  .then(res => res.json())
+  .then(data => {
+    const table = document.getElementById("latestTable");
+    table.innerHTML = "";
+
+    data.forEach(c => {
+      table.innerHTML += `
+        <tr>
+          <td>${c.name}</td>
+          <td>${c.role}</td>
+          <td><span class="badge completed">${c.status}</span></td>
+          <td>${c.date === "N/A" ? "N/A" : new Date(c.date).toLocaleDateString()}</td>
+          <td>
+            <button class="view-btn"
+              onclick="window.location.href='view-cv?id=${c.id}'">
+              View
+            </button>
+          </td>
+        </tr>
+      `;
+    });
+  })
+  .catch(err => console.error("Latest candidates error:", err));
+</script>
+
+</body>
+</html>

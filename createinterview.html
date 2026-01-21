@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>HR Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="createinterview.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+  <div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="brand">AI Interview</div>
+
+      <nav class="menu">
+        <a href="hr"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
+        <a class="active" href="createinterview"><i class="fa-solid fa-calendar-plus"></i> Create Interview</a>
+        <a href="hr_candidate"><i class="fa-solid fa-users"></i> Candidates</a>
+        <a href="sendresult"><i class="fa-solid fa-paper-plane"></i> Send Result</a>
+      </nav>
+    </aside>
+
+    <main class="main">
+
+      <!-- Topbar -->
+      <header class="topbar">
+        <h1>Create Interview</h1>
+        <button class="btn" onclick="window.location.href='index.html'">Logout</button>
+      </header>
+
+      <!-- Form Card -->
+      <section class="form-card">
+
+        <form action="create-interview" method="post">
+
+  <div class="form-grid">
+
+    <!-- Job Role -->
+    <div class="form-group">
+      <label>Job Role</label>
+      <select name="role" required>
+        <option value="">Select Role</option>
+        <option>Frontend Developer</option>
+        <option>Backend Developer</option>
+        <option>Full Stack Developer</option>
+        <option>Java Developer</option>
+      </select>
+    </div>
+
+    <!-- Experience (optional, not stored now) -->
+    <div class="form-group">
+      <label>Experience Level</label>
+      <select name="experience">
+        <option value="">Select Experience</option>
+        <option>Fresher</option>
+        <option>1-3 Years</option>
+        <option>3-5 Years</option>
+        <option>5+ Years</option>
+      </select>
+    </div>
+
+    <!-- Duration -->
+    <div class="form-group">
+      <label>Interview Duration</label>
+      <select name="duration">
+        <option value="30">30 Minutes</option>
+        <option value="45">45 Minutes</option>
+        <option value="60">60 Minutes</option>
+      </select>
+    </div>
+
+    <!-- Date -->
+    <div class="form-group">
+      <label>Interview Date</label>
+      <input type="date" name="date" required>
+    </div>
+
+    <!-- Time -->
+    <div class="form-group">
+      <label>Interview Time</label>
+      <input type="time" name="time" required>
+    </div>
+
+    <!-- Email -->
+    <div class="form-group">
+      <label>Candidate Email</label>
+      <input type="email" name="email" placeholder="example@email.com" required>
+    </div>
+
+  </div>
+
+  <div class="form-actions">
+    <button type="submit" class="btn-primary">Create Interview</button>
+  </div>
+
+</form>
+
+      </section>
+
+    </main>
+  </div>
+
+</body>
+<script>
+const params = new URLSearchParams(window.location.search);
+
+if (params.get("mail") === "success") {
+    alert("✅ Interview created and email sent to candidate");
+}
+
+if (params.get("mail") === "failed") {
+    alert("⚠ Interview created, but email failed to send");
+}
+</script>
+
+</html>

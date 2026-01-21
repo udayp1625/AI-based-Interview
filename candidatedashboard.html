@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Candidate Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="candidatedashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- Header -->
+    <div class="header glass">
+      <h1>Welcome, Candidate 👋</h1>
+
+      <div class="header-actions">
+        <button class="btn mock" onclick="window.location.href='candidatefirstpage.html'">
+          <i class="fa-solid fa-robot"></i> Mock Interview
+        </button>
+
+        <button class="btn start">
+          <i class="fa-solid fa-play"></i> Start Interview
+        </button>
+
+        <!-- Profile -->
+        <div class="profile-container">
+          <i class="fa-solid fa-user profile-icon" onclick="toggleMenu()"></i>
+
+          <div class="profile-menu" id="profileMenu">
+            <a href="logout">
+              <i class="fa-solid fa-right-from-bracket"></i> Logout
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Welcome Section -->
+    <div class="welcome-card">
+      <div class="welcome-text">
+        <h2>Ready for your next interview?</h2>
+        <p>Practice mock interviews or attend your scheduled AI interview and track your performance.</p>
+      </div>
+      <img src="welcomecandidate.png" alt="Welcome Candidate">
+    </div>
+
+    <!-- History -->
+    <div class="history card">
+      <h2>Mock Interview History</h2>
+
+      <div class="table-header">
+        <span>Date</span>
+        <span>Position</span>
+        <span>Duration</span>
+        <span>Report</span>
+      </div>
+
+      <div class="table-row">
+        <span>—</span>
+        <span>—</span>
+        <span>—</span>
+        <button class="view-btn">View</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("profileMenu");
+      menu.style.display = menu.style.display === "block" ? "none" : "block";
+    }
+
+    window.onclick = function(event) {
+      if (!event.target.classList.contains("profile-icon")) {
+        document.getElementById("profileMenu").style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>
