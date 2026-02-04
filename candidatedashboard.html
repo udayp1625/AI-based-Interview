@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Candidate Dashboard</title>
@@ -23,7 +24,9 @@
         </button>
 
         <button class="btn start">
-          <i class="fa-solid fa-play"></i> Start Interview
+          <a href="permission.html">
+            <i class="fa-solid fa-play"></i> Start Interview
+          </a>
         </button>
 
         <!-- Profile -->
@@ -75,7 +78,7 @@
       menu.style.display = menu.style.display === "block" ? "none" : "block";
     }
 
-    window.onclick = function(event) {
+    window.onclick = function (event) {
       if (!event.target.classList.contains("profile-icon")) {
         document.getElementById("profileMenu").style.display = "none";
       }
@@ -83,4 +86,5 @@
   </script>
 
 </body>
+
 </html>
