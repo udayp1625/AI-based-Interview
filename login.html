@@ -15,83 +15,51 @@
 
       <!-- Toggle Buttons -->
       <div class="toggle-buttons">
-        <button class="toggle-btn active" id="hrBtn" type="button">HR Login</button>
-        <button class="toggle-btn" id="candidateBtn" type="button">Candidate Login</button>
+        <button class="toggle-btn active" id="hrBtn">HR Login</button>
+        <button class="toggle-btn" id="candidateBtn">Candidate Login</button>
       </div>
 
       <!-- HR LOGIN FORM -->
-      <form class="form active"
-            action="HrLoginServlet"
-            method="post">
-
+      <form id="hrForm" class="form active">
         <h2>HR Portal</h2>
         <p class="subtitle">Login to manage interviews</p>
 
         <label>Email / HR ID</label>
-        <input type="text"
-               name="email"
-               placeholder="Enter HR email or ID"
-               required>
+        <input type="text" placeholder="Enter HR email or ID" required>
 
         <label>Password</label>
-        <input type="password"
-               name="password"
-               placeholder="Enter password"
-               required>
+        <input type="password" placeholder="Enter password" required>
 
-        <button onclick="window.location.href='hr.html'">Login</button>
+        <div class="remember">
+          <input type="checkbox"> Remember me
+        </div>
 
+        <button type="submit" class="login-btn" onclick="window.location.href='hr.html'">Login</button>
         <p class="note">Authorized HR personnel only</p>
-        <p id="errorMsg" style="color:red; display:none; font-size:14px;"></p>
       </form>
 
-     <!-- CANDIDATE LOGIN FORM -->
-<form id="candidateForm"
-      class="form"
-      action="login"
-      method="post">
+      <!-- CANDIDATE LOGIN FORM -->
+      <form class="form">
+        <h2>Candidate Portal</h2>
+        <p class="subtitle">Login to start your interview</p>
 
-  <h2>Candidate Portal</h2>
-  <p class="subtitle">Login to start your interview</p>
+        <label>Email / Candidate ID</label>
+        <input type="text" placeholder="Enter email or ID" required>
 
-  <label>Email / Candidate ID</label>
-  <input type="text"
-         name="username"
-         placeholder="Enter email or ID"
-         required>
+        <label>Password</label>
+        <input type="password" placeholder="Enter password" required>
 
-  <label>Password</label>
-  <input type="password"
-         name="password"
-         placeholder="Enter password"
-         required>
+        <button type="button" class="login-btn" onclick="window.location.href='candidatedashboard.html'">
+          Login
+        </button>
 
-  <button type="submit" class="login-btn">
-    Login
-  </button>
-
-  <p class="note">Ensure camera & mic access</p>
-
-</form>
-
+        <p class="note">Ensure camera & mic access</p>
+      </form>
 
     </div>
   </div>
 
   <script src="login.js"></script>
-  <script>
-  const params = new URLSearchParams(window.location.search);
-  const error = params.get("error");
-
-  if (error === "invalid") {
-    const msg = document.getElementById("errorMsg");
-    msg.innerText = "❌ Invalid email or password";
-    msg.style.display = "block";
-  }
-</script>
-  
 </body>
+
 </html>
-
-
-
