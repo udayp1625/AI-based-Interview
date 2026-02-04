@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AI Interview</title>
+    <link rel="stylesheet" href="interview.css">
+</head>
+
+<body>
+
+    <header>
+        <h2>🤖 AI Interview – Frontend Developer</h2>
+        <span id="timer">30:00</span>
+        <button id="closeInterviewBtn" onclick="closeInterview()">
+            Close Interview
+        </button>
+    </header>
+
+    <div class="main-container">
+
+        <!-- LEFT: AI + Question -->
+        <div class="left-panel">
+            <h3>AI Question</h3>
+            <p id="question">Loading first question...</p>
+
+            <button class="listen-btn" onclick="listenQuestion()">🔊 Listen Question</button>
+
+
+            <textarea id="answer" placeholder="Your spoken answer will appear here..."></textarea>
+
+            <div class="controls">
+                <button onclick="startRecording()">🎤 Speak</button>
+                <button onclick="submitAnswer()">Submit</button>
+            </div>
+
+            <p id="status"></p>
+        </div>
+
+        <!-- RIGHT: Camera -->
+        <div class="right-panel">
+            <h3>Camera Monitoring</h3>
+            <video id="camera" autoplay muted></video>
+        </div>
+
+    </div>
+
+    <script src="interview.js"></script>
+</body>
+
+</html>
